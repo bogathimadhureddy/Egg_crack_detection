@@ -1,4 +1,4 @@
-<font color="green"> Egg_crack_detection </font>
+<span style="color: green;">This is green text</span>
 
 ## Introduction:
 People are giving priority to high-quality food products. Eggs are excellent sources of protein and nutrients.
