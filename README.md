@@ -12,7 +12,7 @@
 * Human error is a constant risk when manually counting items at scale, potentially resulting in inaccurate inventory records and wastage
 
 ## Project architecture:
-![Architecture](Screenshot_2023-12-02_085236.png)
+![image](https://github.com/bogathimadhureddy/Egg_crack_detection/assets/118733598/d1ef8d59-5b3e-474e-b1de-50d0164c90ae)
 ## Business Objective And Constrains:
 ### Objective:
 * Minimize Manual Counting of Cracked Eggs.
