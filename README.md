@@ -1,4 +1,4 @@
-# Egg_crack_detection
+<span style="color: green"> # Egg_crack_detection </span>
 
 ## Introduction:
 People are giving priority to high-quality food products. Eggs are excellent sources of protein and nutrients.
