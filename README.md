@@ -1,4 +1,4 @@
-![image](https://github.com/bogathimadhureddy/Egg_crack_detection/assets/118733598/70443682-803f-42c1-acb3-995e912c0621)## Egg_crack_detection
+## Egg_crack_detection
 
 # Introduction:
 People are giving priority to high-quality food products. Eggs are excellent sources of protein and nutrients.
