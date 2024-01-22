@@ -13,3 +13,12 @@
 
 ## Project architecture:
 ![Architecture](Screenshot_2023-12-02_085236.png)
+## Business Objective And Constrains:
+### Objective:
+* Minimize Manual Counting of Cracked Eggs.
+### Constrains:
+* Minimize the cost of Solution.
+* Minimize the time consuming of egg crack detection.
+* Increase the accuracy in prediction of cracked eggs.
+
+
