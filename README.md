@@ -124,3 +124,86 @@ data['train'] = str(train_folder)
 data['val'] = str(val_folder)
 
 
+data
+
+# Save the updated YAML file
+with open('/content/datasets/Egg_crack-1/data.yaml', 'w') as file:
+    yaml.dump(data, file)
+
+from ultralytics import YOLO
+
+# Load a model
+#model = YOLO('yolov8n.yaml')  # build a new model from YAML
+model = YOLO('yolov8n.pt')  # load a pretrained model (recommended for training)
+#model = YOLO('yolov8n.yaml').load('yolov8n.pt')  # build from YAML and transfer weights
+
+# Train the model
+results = model.train( data='/content/datasets/Egg_crack-1/data.yaml', imgsz=640,epochs=30 , lr0 = 0.00269, lrf= 0.00288, momentum= 0.73375)
+  #weight_decay: 0.00015
+
+import shutil
+from google.colab import files
+
+# Replace 'source_folder' with the actual name of your source folder
+shutil.make_archive("/content/train", 'zip', "/content/runs/detect/train")
+
+# Download the zip file
+files.download("/content/train.zip")
+
+Image('/content/runs/detect/train/confusion_matrix.png')
+
+Image('/content/runs/detect/train/confusion_matrix_normalized.png')
+
+Image('/content/runs/detect/train/results.png')
+
+Image('/content/runs/detect/train/val_batch1_labels.jpg')
+
+Image('/content/runs/detect/train/val_batch0_labels.jpg')
+
+Image('/content/runs/detect/train/F1_curve.png')
+
+import shutil
+shutil.rmtree('/content/datasets/runs')
+
+import locale
+locale.getpreferredencoding = lambda: "UTF-8"
+!yolo task=detect mode=val model=/content/runs/detect/train/weights/best.pt data=/content/datasets/Egg_crack-1/data.yaml
+
+"""from google.colab import drive
+drive.mount('/content/drive')
+"""
+
+!yolo task=detect mode=predict model=/content/runs/detect/train/weights/best.pt source=/content/drive/MyDrive/New_data
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+import glob
+from IPython.display import display, Image
+for image_path in glob.glob(f'/content/runs/detect/predict/*.png')[:9]:
+  display(Image(filename = image_path, height = 200))
+  print('\n')
+
+import shutil
+from google.colab import files
+
+# Replace 'source_folder' with the actual name of your source folder
+shutil.make_archive("/content/predicts", 'zip', "/content/runs/detect/predict")
+
+# Download the zip file
+files.download("/content/predicts.zip")
+
+project.version(dataset.version).deploy(model_type="yolov8", model_path=f"/content/runs/detect/train")
+
+model = project.version(dataset.version).model
+
+#choose random test set image
+import os, random
+test_set_loc = "/content/drive/MyDrive/New_data/"
+random_test_image = random.choice(os.listdir(test_set_loc))
+print("running inference on " + random_test_image)
+
+pred = model.predict(test_set_loc + random_test_image, confidence=40, overlap=30).json()
+pred
+
+
