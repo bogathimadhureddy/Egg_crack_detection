@@ -11,5 +11,5 @@
 * The need for efficiency in food preparation is hindered by the time-consuming nature of manual egg cracking Detection, crucial in meeting customer demands and maintaining a smooth workflow. 
 * Human error is a constant risk when manually counting items at scale, potentially resulting in inaccurate inventory records and wastage
 
+## Project architecture:
 
-Creating and implementing a Neural network model to design an egg classification system that  allows a machine to directly classify the egg type and crack.
