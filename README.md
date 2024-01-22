@@ -12,4 +12,4 @@
 * Human error is a constant risk when manually counting items at scale, potentially resulting in inaccurate inventory records and wastage
 
 ## Project architecture:
-![Architecture]Screenshot 2023-12-02 085236.png
+![Architecture](Screenshot 2023-12-02 085236.png)
