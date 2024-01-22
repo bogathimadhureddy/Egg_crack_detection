@@ -1,6 +1,6 @@
-## Egg_crack_detection
+# Egg_crack_detection
 
-# Introduction:
+## Introduction:
 People are giving priority to high-quality food products. Eggs are excellent sources of protein and nutrients.
 Eggshells are prone to develop cracks during their handling process.
 Egg industries emphasize on eliminating cracked eggs from reaching the consumers, as cracks contaminate the egg contents.
